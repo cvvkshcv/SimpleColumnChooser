@@ -1,6 +1,6 @@
 # Simple column chooser
 
-A lightweight column chooser Angular library for tables.
+A lightweight column chooser Angular (2+) library for tables.
 
 #### Usage
 ```sh
