@@ -1,0 +1,11 @@
+<div class="col-chooser-wrapper">
+  <span class="plus" (click)="showMenu = !showMenu">&#43;</span>
+  <div id="col-chooser-list" [hidden]="!showMenu">
+    <ul id="col-list">
+      <li *ngFor="let row of chooser.config">
+        <input [disabled]="row.required" type="checkbox" [checked]="!row.hide || row.required" (change)="selectionChange(row.index, $event)" />
+        <span>{{ row.name }}</span>
+      </li>
+    </ul>
+  </div>
+</div>

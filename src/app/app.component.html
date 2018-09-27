@@ -1,20 +1,54 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
+<table class="table2" columnChooser #table2="columnChooser">
+        <thead>  
+            <tr class="tableHeaderRow">
+                <th data-eliminate="true">
+                    <app-column-chooser [chooser]="table2"></app-column-chooser>
+                </th>
+                <th  class="sourceHeader" data-title="User ID" data-required="true">
+                    <div class="tdSortable">User ID</div>
+                </th>
+                <th  class="sourceHeader" data-title="Name">
+                    <div class="tdSortable">Name</div>
+                </th>
+                <th  class="sourceHeader">
+                    Gender
+                </th>
+                <th  class="sourceHeader">
+                    Class
+                </th>
+                <th  class="sourceHeader" data-hide="true">
+                    Club
+                </th>
+                <th  class="destinationHeader" data-title="Strength">
+                    <div class="tdSortable">Strength</div>
+                </th>
+                <th  class="destinationHeader">
+                    Hairstyle
+                </th>
+                <th class="destinationHeader">
+                    Color
+                </th>
+                <th  class="destinationHeader">
+                    Stockings
+                </th>
+                <th  class="destinationHeader" data-hide="true">
+                    ScheduleAction
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="tableHeaderRow" *ngFor="let row of arr">
+                <td></td>
+                <td class="tableBorder" title="{{row.ID}}">{{row.ID}}</td>
+                <td class="tableBorder" title="{{row.Name}}">{{row.Name}}</td>
+                <td class="tableBorder" title="{{ (row.Gender == '1') ? 'Male' : 'Female' }}">{{ (row.Gender == '1') ? 'Male' : 'Female'}}</td>
+                <td class="tableBorder" title="{{row.Class}}">{{row.Class}}</td>
+                <td class="tableBorder" title="{{row.Club}}">{{row.Club}}</td>
+                <td class="tableBorder" title="{{row.Strength}}">{{row.Strength}}</td>
+                <td class="tableBorder" title="{{row.Hairstyle}}">{{row.Hairstyle}}</td>
+                <td class="tableBorder" title="{{row.Color}}">{{row.Color}}</td>
+                <td class="tableBorder" title="{{row.Stockings}}">{{row.Stockings}}</td>
+                <td class="tableBorder" title="{{row.ScheduleAction}}">{{row.ScheduleAction}}</td>
+            </tr>
+        </tbody>
+    </table>
