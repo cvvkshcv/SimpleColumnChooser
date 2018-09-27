@@ -1,27 +1,64 @@
-# Sigtuple
+# Simple column chooser
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
+A lightweight column chooser Angular library for tables.
 
-## Development server
+#### Usage
+```sh
+<table columnChooser #table1="columnChooser" <--- 'required (1)'> 
+    <thead> <--- 'required'
+        <tr>
+            <th data-options <--- 'optional (2)'>
+                Col 1
+            </th>
+        </tr>
+    </thead>
+    <tbody> <--- 'required'
+        <tr>
+            <td> Col data 1 </td>
+        </tr>
+    </tbody>
+</table>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+<app-column-chooser [chooser]="table1" <-- 'Pass (1) value here' ></app-column-chooser>
+```
 
-## Code scaffolding
+#### Options (data-options (2))
+  - data-required="true"
+  - data-eliminate="true"
+  - data-title="some string value"
+  - data-hide="true"
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Example
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```sh
+<table columnChooser #table1="columnChooser">
+    <thead>
+        <tr>
+            <th data-eliminate="true">Select</th>
+            <th data-title="Time line">Month</th>
+            <th data-hide="true">hide Savings</th>
+            <th data-required="true">show Savings</th>
+            <th data-hide="true">show Savings21</th>
+            <th data-eliminate="true">
+                <app-column-chooser [chooser]="table1"></app-column-chooser>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input type="checkbox" /></td>
+            <td>row 1</td>
+            <td>col 1</td>
+            <td>col 2</td>
+            <td>col 3</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" /></td>
+            <td>row 2</td>
+            <td>col 1</td>
+            <td>col 2</td>
+            <td>col 3</td>
+        </tr>
+    </tbody>
+</table>
+```
