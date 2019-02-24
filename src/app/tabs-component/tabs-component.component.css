@@ -1,0 +1,23 @@
+:host {
+    display: block;
+}
+ul.title {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    display: flex;
+    min-height: 50px;
+}
+ul.title li {
+    float: left;
+    flex-grow: 1;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ul.title li.active {
+    background-color: #ccc;
+    color: #fff;
+}

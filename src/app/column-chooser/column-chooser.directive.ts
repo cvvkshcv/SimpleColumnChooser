@@ -32,7 +32,7 @@ export class ColumnChooserDirective implements OnInit {
     this.theadRows.forEach((item, i) => {
       if(item.getAttribute('data-eliminate')) return;
       let tempconfig = {
-        name : (item.getAttribute('data-title')) ? item.getAttribute('data-title') : item.innerHTML.trim(),
+        name : (item.getAttribute('data-title')) ? item.getAttribute('data-title') : item.innerText.trim(),
         required : !!item.getAttribute('data-required'),
         hide : !!item.getAttribute('data-hide'),
         index : i

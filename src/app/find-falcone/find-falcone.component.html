@@ -1,0 +1,15 @@
+<!-- <ng-container *ngIf="planets">
+
+  <select *ngFor="let select of selects;let i = index"
+    [disabled]="!select.enable" 
+    (change)="addPlanet(i, $event)">
+      <option *ngFor="let planet of select.options">{{ planet.name }}</option>
+  </select>
+
+  {{ selOptions }}
+</ng-container> -->
+<app-dropdown [options]="planets" [enable]="true"></app-dropdown>
+<app-dropdown [options]="planets"></app-dropdown>
+<app-dropdown [options]="planets"></app-dropdown>
+<app-dropdown [options]="planets"></app-dropdown>
+<!-- <app-game [config]="gameConfig"></app-game> -->

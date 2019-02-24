@@ -1,0 +1,87 @@
+<!-- <app-flypanel
+  [open]="showFlypanel"
+  [width]="450"
+  [height]="100"
+  [placement]="'right'"
+  (onOpen)="flypanleToggle(parent, true)"
+  (onClose)="flypanleToggle(parent, false)"
+  (closeClick)="showFlypanel = false"
+  >
+ -->
+
+  <!--
+    (closeClick)="handleClose()"
+    app-flypanel:
+      options:
+        open: boolean - opens and close panel
+        width: number - width of flypanel
+        top: number - top from the screen
+        placement: 'left' | 'rigth' - panel comes in right or left
+        closeButton: boolean - enable closing button
+      
+      Events :
+        onOpen : when flypanel opens
+        onClose : when flypanel closing
+  -->
+  <!--
+  <span flypanel-header>{{ datum?.name }}</span>
+  
+  <div flypanel-content>
+    <pre>{{ datum | json }}</pre>
+    <pre>{{ datum | json }}</pre>
+  </div>
+</app-flypanel> -->
+
+
+<button (click)="showDialog = !showDialog">Open dialog</button>
+<app-alert-box [open]="showDialog" [buttons]="{'danger':'Revoke', 'info' : 'Warning'}"
+(onOpen)="model('open', $event)" (onClose)="model('close', $event)"
+(onDanger)="dangerClick()"
+>
+  <div alert-box-header>Do you want to revoke the New API key-2?</div>
+  <div alert-box-content>If you revoke this key, the configured third-party applications might stop working as intended.</div>
+</app-alert-box>
+
+
+<div id="parent" #parent>
+  <div class="col-md-6">
+    <p>{{ (showFlypanel) ? 'Flypanel true' : 'Flypanle false' }}</p>
+    <table id="table1" #table>
+      <tr *ngFor="let datum of data" (click)="passData(datum)">
+        <td>{{ datum.name }}</td>
+        <td>{{ datum.username }}</td>
+        <td>Hi</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="col-md-6">
+    <table>
+        <tr>
+          <th>Hi</th>
+          <th>Hi</th>
+          <th>Hi</th>
+        </tr>
+        <tr>
+          <td>Hi</td>
+          <td>Hi</td>
+          <td>Hi</td>
+        </tr>
+        <tr>
+          <td>Hi</td>
+          <td>Hi</td>
+          <td>Hi</td>
+        </tr>
+        <tr>
+          <td>Hi</td>
+          <td>Hi</td>
+          <td>Hi</td>
+        </tr>
+        <tr>
+          <td>Hi</td>
+          <td>Hi</td>
+          <td>Hi</td>
+        </tr>
+      </table> 
+  </div>
+</div>

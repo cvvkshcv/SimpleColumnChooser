@@ -1,0 +1,74 @@
+
+#header {
+    height: 30px;
+    width: 100%;
+    background: #3a3f50;
+    color: #e7e8ea;
+    position: relative;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+#header .close-button {
+    color: #e7e8ea;
+    position: absolute;
+    font-size: 30px;
+    right: 15px;
+    top: -2px;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+#header .close-button:hover {
+    color: #fff;
+    transition: all 0.4s;
+}
+#header .heading{
+    width: calc( 100% - 40px);
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.flypanel {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    transition-duration: 0.3s;
+    transition-property:  top, bottom, right;
+    top:0;
+    border-left: 1px solid #eee;
+    overflow: hidden;
+    box-shadow: 1px 1px 15px #eee;
+    z-index: 999999;
+}
+.flypanel.right.close {
+    right: -100%;
+}
+.flypanel.right.open {
+    right: 0;
+}
+.flypanel.left.close {
+    left: -100%;
+}
+.flypanel.left.open {
+    left: 0;
+}
+.flypanel.bottom {
+    left: 0;
+}
+.flypanel.bottom.close {
+    bottom: -100%;
+}
+.flypanel.bottom.open {
+    bottom: 0;
+}
+#content {
+    height: calc( 100% - 48px);
+    overflow-y: auto;
+    background: #fff;
+    padding: 5px;
+    padding-bottom: 40px;
+}

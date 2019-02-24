@@ -1,0 +1,78 @@
+<p>
+  home works!
+</p>
+<p> {{ welcomeMessage | reversePipe }}</p>
+<p>{{ someJson | json }}</p>
+<p>{{ mydate | date: 'd MM yyyy, h:mm a'  }}</p>
+
+<!-- <input type="text" name="title" placeholder="Title" ngModel required autocomplete="off" /> <br />
+<input type="text" name="body" placeholder="Body" ngModel required minlength="3" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" autocomplete="off" /> <br /> 
+<input type="text" name="phone" placeholder="Phone number" ngModel required minlength="10" pattern="^[0-9]{10}$" autocomplete="off" /> <br />  -->
+
+<form #myForm="ngForm" (ngSubmit)="sendForm(myForm)">
+  <input type="text" name="title" placeholder="Title" ngModel required autocomplete="off" /> <br />
+  <input type="text" name="body" placeholder="Body" ngModel required minlength="3" autocomplete="off" /> <br />
+  <button [disabled]="myForm.invalid">Submit</button>
+</form>
+
+<!-- Valid : {{ myForm.valid }}<br />
+Invalid : {{ myForm.invalid }} <br />
+Dirty : {{ myForm.dirty }} <br />
+Pristine : {{ myForm.pristine }} <br />
+Touched : {{ myForm.touched }} <br />
+Untouched : {{ myForm.untouched }} <br /> -->
+<pre>
+  {{ myForm.value | json }}
+</pre>
+
+
+<table class="table2" border="1">
+  <thead>  
+      <tr class="tableHeaderRow">
+          <th  class="sourceHeader" appResizeTableCol>
+              <div class="tdSortable">User ID</div>
+          </th>
+          <th  class="sourceHeader">
+              <div class="tdSortable">Name</div>
+          </th>
+          <th  class="sourceHeader">
+              Gender
+          </th>
+          <th  class="sourceHeader">
+              Class
+          </th>
+          <th  class="sourceHeader" data-hide="true">
+              Club
+          </th>
+          <th  class="destinationHeader" appResizeTableCol>
+              <div class="tdSortable">Strength</div>
+          </th>
+          <th  class="destinationHeader">
+              Hairstyle
+          </th>
+          <th class="destinationHeader">
+              Color
+          </th>
+          <th  class="destinationHeader">
+              Stockings
+          </th>
+          <th  class="destinationHeader" data-hide="true">
+              ScheduleAction
+          </th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr class="tableHeaderRow" *ngFor="let row of arr">
+          <td class="tableBorder">Hi</td>
+          <td class="tableBorder">Hi</td>
+          <td class="tableBorder">Hi</td>
+          <td class="tableBorder">Hi</td>
+          <td class="tableBorder">Hi</td>
+          <td class="tableBorder">Hi</td>
+          <td class="tableBorder">Hi</td>
+          <td class="tableBorder">Hi</td>
+          <td class="tableBorder">Hi</td>
+          <td class="tableBorder">Hi</td>
+      </tr>
+  </tbody>
+</table>

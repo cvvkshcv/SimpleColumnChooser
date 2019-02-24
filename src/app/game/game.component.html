@@ -1,0 +1,20 @@
+<div class="score-card">
+  <p class="level">Level : {{ config.grids - 2 }}</p>
+  <app-score [text]="'score'" [score]="config.score"></app-score>
+  <h3 class="time">Time remaining : <span>{{ config.timer }}</span> seconds</h3>
+</div>
+<div class="board"
+    [ngStyle]="{ 'height':config.grids * 100+'px', 'width': config.grids * 100 +'px'}"
+    *ngIf="!config.showMenu">
+  <div class="grid"
+    *ngFor="let grid of config.totalGrid; let i = index"
+    [style.width.px]="((config.grids * 100) / config.grids ) - 2"
+    [ngClass]="{ 'active': config.highlightGridIndex===i}"
+    (click)="gridClicked(config.highlightGridIndex===i)"
+  >
+  </div>
+</div>
+<div class="menu" *ngIf="config.showMenu">
+  <button class="next-level" (click)="playNextLevel()">Play next level</button>
+</div>
+<app-score [text]="'high score'" [score]="config.highScore"></app-score>

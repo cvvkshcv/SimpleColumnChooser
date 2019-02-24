@@ -1,0 +1,11 @@
+<div class="dropdown-wrapper" [class.disabled]="!enable">
+  <button (click)="toggleDropdown($event)">{{ (selected) ? selected.name : 'Select' }} <span>&#21E9;</span></button>
+  <ng-container *ngIf="open">
+    <ul class="dropdown" *ngIf="!options">
+      <li class="not-allowed">No options available</li>
+    </ul>
+    <ul class="dropdown" *ngIf="options && options.length > 0">
+      <li *ngFor="let option of options" (click)="onSelect(option)">{{ option.name }}</li>
+    </ul>
+  </ng-container>
+</div>

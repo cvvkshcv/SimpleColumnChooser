@@ -1,4 +1,4 @@
-<table class="table2" columnChooser #table2="columnChooser">
+<!-- <table class="table2" columnChooser #table2="columnChooser">
         <thead>  
             <tr class="tableHeaderRow">
                 <th data-eliminate="true">
@@ -7,7 +7,7 @@
                 <th  class="sourceHeader" data-title="User ID" data-required="true">
                     <div class="tdSortable">User ID</div>
                 </th>
-                <th  class="sourceHeader" data-title="Name">
+                <th  class="sourceHeader" data-title="Name" data-required="true">
                     <div class="tdSortable">Name</div>
                 </th>
                 <th  class="sourceHeader">
@@ -19,7 +19,7 @@
                 <th  class="sourceHeader" data-hide="true">
                     Club
                 </th>
-                <th  class="destinationHeader" data-title="Strength">
+                <th  class="destinationHeader">
                     <div class="tdSortable">Strength</div>
                 </th>
                 <th  class="destinationHeader">
@@ -51,4 +51,12 @@
                 <td class="tableBorder" title="{{row.ScheduleAction}}">{{row.ScheduleAction}}</td>
             </tr>
         </tbody>
-    </table>
+    </table> -->
+    <nav>
+        <a [routerLink]="['/home']">Home</a> |
+        <a [routerLink]="['/about']">About</a> |
+        <a [routerLink]="['/fining-falcone']">Fining Falcone</a> |
+        <a [routerLink]="['/tabs-comp']">Tabs component</a> |
+        <a [routerLink]="['/contact-us']">Contact us</a>
+    </nav>
+    <router-outlet></router-outlet>

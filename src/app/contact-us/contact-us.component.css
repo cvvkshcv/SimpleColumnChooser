@@ -1,0 +1,29 @@
+.col-md-6 {
+    display: inline-block;
+    float: left;
+    width: 50%;
+}
+#table1 {
+    width: 100%;
+}
+#table1 tr:hover {
+    background: #eee;
+    cursor: pointer;
+}
+#parent {
+    transition: all 0.3s;
+    width: 100%;
+}
+
+#parent.open {
+    width: calc( 100% - 350px );
+}
+
+app-flypanel-header {
+    background: #6559a7;
+}
+app-flypanel-header p {
+    margin: 0;
+    color: #fff;
+    line-height: 28px;
+}

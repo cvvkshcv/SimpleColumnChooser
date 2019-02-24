@@ -1,5 +1,5 @@
 {
-  "name": "SimpleColumnChooser",
+  "name": "simplecolumnchooser",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -45,5 +45,21 @@
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
     "typescript": "~2.5.3"
-  }
+  },
+  "description": "A lightweight column chooser Angular (2+) library for tables.",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cvvkshcv/SimpleColumnChooser.git"
+  },
+  "keywords": [
+    "lightweight",
+    "column",
+    "chooser"
+  ],
+  "author": "Vikash CV <cvvkshcv@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/cvvkshcv/SimpleColumnChooser/issues"
+  },
+  "homepage": "https://github.com/cvvkshcv/SimpleColumnChooser#readme"
 }

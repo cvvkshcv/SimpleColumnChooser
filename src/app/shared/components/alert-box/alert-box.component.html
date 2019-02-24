@@ -1,0 +1,22 @@
+<div class="layer" [@fadeInOut] (@fadeInOut.done)="focusButton(cancelButton)" *ngIf="open" (click)="close()">
+  <div class="alert-box-container" (click)="close($event)">
+    
+    <div class="top-section">
+      <div class="col icon-section {{ type }}"></div>
+      <div class="col content-section">
+        <div class="alert-box-header"><ng-content select="[alert-box-header]"></ng-content></div>
+        <div class="alert-box-content custom-scroll"><ng-content select="[alert-box-content]"></ng-content></div>
+      </div>
+    </div>
+
+    <div class="bottom button-section">
+      <button class="cancel" autofocus #cancelButton (click)="close()">Cancel</button>
+      <button *ngIf="buttons['danger']" [innerText]="buttons['danger']" class="danger" (click)="dangerClick()"></button>
+      <button *ngIf="buttons['info']" [innerText]="buttons['info']" class="info" (click)="infoClick()"></button>
+      <button *ngIf="buttons['warning']" [innerText]="buttons['warning']" class="warning" (click)="warningClick()"></button>
+      <button *ngIf="buttons['success']" [innerText]="buttons['success']" class="success" (click)="successClick()"></button>
+      <button *ngIf="buttons['primary']" [innerText]="buttons['primary']" class="primary" (click)="primaryClick()"></button>
+    </div>
+
+  </div>  
+</div>
